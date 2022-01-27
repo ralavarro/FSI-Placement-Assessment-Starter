@@ -1,73 +1,83 @@
-// HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
-// First, tell us your name
-let yourName = "Ruth Ann Lavarro" // HINT: Replace this with your own name!
+// Projec By
+let yourName = "Ruth Ann Lavarro" 
+let gbtotal = 1;
+let cctotal = 1;
+let sugartotal = 1;
 
-// We'll use these variables to track the counts of each cookie type
+
+
+// Initializing count
 let gb = 0;// Gingerbread
 let cc = 0 ;// Chocolate Chip
 let sugar = 0; // Sugar Sprinkle
 
-
-
-// selecting the element with an id of credit
+// Selecting Credit and Button Elements
 const credit = document.querySelector('#credit');
-// selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
-// selecting the element with an id of minus-gb;
+const gbPlusBtn = document.querySelector('#add-gb');
 const gbMinusBtn = document.querySelector('#minus-gb')
-// selecting the element with an id of add-cc;
 const ccPlusBtn = document.querySelector('#add-cc')
-// selecting the element with an id of minus-cc;
 const ccMinusBtn = document.querySelector('#minus-cc')
-// selecting the element with an id of add-sugar;
 const sugarPlusBtn = document.querySelector('#add-sugar')
-// selecting the element with an id of add-sugar;
 const sugarMinusBtn = document.querySelector('#minus-sugar')
+
+//Get Element
+let qtygb = document.getElementById('qty-gb')
+let qtycc = document.getElementById('qty-cc')
+let qtysugar = document.getElementById('qty-sugar')
+let Total = document.getElementById('qty-total')
 
 // Code to update name display
 credit.textContent = `Created by ${yourName}`;
 
 
+/*Event Listeners
+Increment/decrement each by 1 as the button is clicked*/
 
-// Event listener for clicks on the "+" button for Gingerbread cookies
+//Incrementing code
 gbPlusBtn.addEventListener('click', function() {
-    gb = gb +1;})
-    
-    //console.log('Gingerbread + button was clicked!')})
+     gbtotal = gbtotal + 1;
 
-    gbMinusBtn.addEventListener('click', function() {
-        if(gb > 0) {
-        gb = gb -1;
-        gbMinusBtn.textContent = `summary:${qty-gb}`;
+    console.log (gbtotal);
+    qtygb.textContent = `${gbtotal}`;
+})
 
-        
+ccPlusBtn.addEventListener('click', function() {
+    cctotal = cctotal + 1;
+   //console.log (cctotal);
+   qtycc.textContent = `${cctotal}`;
+})
+
+sugarPlusBtn.addEventListener('click', function() {
+    sugartotal = sugartotal + 1;
+   //console.log (sugartotal);
+   qtysugar.textContent = `${sugartotal}`;
+})
+
+//Decrementing
+gbMinusBtn.addEventListener('click', function() {
+    if(gbtotal > 0) {
+        gbtotal = gbtotal -1;
+      //  console.log (gbtotal);
+      qtygb.textContent = `${gbtotal}`;
     }})
-   //console.log('Gingerbread - button was clicked!')})
-
-   ccPlusBtn.addEventListener('click', function() {
-    cc = cc +1;})
-    //console.log('cc + button was clicked!')})
-
-    ccMinusBtn.addEventListener('click', function() {
-    if(cc > 0) {
-        cc = cc -1;
+   
+ccMinusBtn.addEventListener('click', function() {
+    if(cctotal > 0) {
+        cctotal = cctotal -1;
+        //console.log (cctotal);
+        qtycc.textContent = `${cctotal}`;
     }})        
-    //console.log('cc - button was clicked!')})
-
-    sugarPlusBtn.addEventListener('click', function() {
-        sugar = sugar +1;})
-        //console.log('sugar + button was clicked!') })
-
-    sugarMinusBtn.addEventListener('click', function() {
-    if(sugar > 0) {
-        sugar = sugar -1;
+    
+sugarMinusBtn.addEventListener('click', function() {
+    if(sugartotal > 0) {
+        sugartotal = sugartotal -1;
+       // console.log (sugartotal);
+        qtysugar.textContent = `${sugartotal}`;
     }})
-            //console.log('sugar - button was clicked!')})
-            
-// HINT: You can delete this console.log after you no longer need it!
 
+let overalltotal = gbtotal + cctotal + sugartotal;
+   Total.textContent = `${overalltotal}`
 
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
-
-// TODO: Hook up event listeners for the rest of the buttons
+/*Totaling
+let Total = qty-gb + qty-cc + qty-sugar;
+Total.textContent = `${`qty-total`}*/
