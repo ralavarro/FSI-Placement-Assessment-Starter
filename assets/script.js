@@ -3,7 +3,7 @@ let yourName = "Ruth Ann Lavarro"
 let gbtotal = 1;
 let cctotal = 1;
 let sugartotal = 1;
-
+let overalltotal = 0;
 
 
 // Initializing count
@@ -39,6 +39,7 @@ gbPlusBtn.addEventListener('click', function() {
 
     console.log (gbtotal);
     qtygb.textContent = `${gbtotal}`;
+    Total.textContent = `${gbtotal}`;
 })
 
 ccPlusBtn.addEventListener('click', function() {
@@ -72,11 +73,14 @@ sugarMinusBtn.addEventListener('click', function() {
     if(sugartotal > 0) {
         sugartotal = sugartotal -1;
        // console.log (sugartotal);
-        qtysugar.textContent = `${sugartotal}`;
+        qtysugar.textContent = `${sugartotal}`
+
+        ;
     }})
 
-let overalltotal = gbtotal + cctotal + sugartotal;
-   Total.textContent = `${overalltotal}`
+
+
+
 
 /*Totaling
 let Total = qty-gb + qty-cc + qty-sugar;
